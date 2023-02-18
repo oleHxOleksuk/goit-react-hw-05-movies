@@ -1,4 +1,4 @@
-const Movies= () => {
+const Movies = () => {
   return (
     <h1>Search</h1>
   )
