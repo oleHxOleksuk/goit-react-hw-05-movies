@@ -1,3 +1,5 @@
+import { BrowserRouter } from "react-router-dom";
+
 import Navigation from "./Navigation/Navigation";
 
 
@@ -5,8 +7,10 @@ import Navigation from "./Navigation/Navigation";
 
 export const App = () => {
   return (
-    <div>
+    <BrowserRouter>
+
     <Navigation/>
-    </div>
+    
+    </BrowserRouter>
   );
 };
