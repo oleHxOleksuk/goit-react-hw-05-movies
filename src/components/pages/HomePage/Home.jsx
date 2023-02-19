@@ -49,7 +49,7 @@ const Home = () => {
           breakLabel="..."
           nextLabel=">"
           onPageChange={handleClick}
-          pageRangeDisplayed={10}
+          pageRangeDisplayed={3}
           pageCount={totalPages}
           previousLabel="<"
           renderOnZeroPageCount={null}
