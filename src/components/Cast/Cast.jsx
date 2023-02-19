@@ -5,6 +5,8 @@ import NotFoundPage from 'components/pages/NotFoundPage/NotFoundPage';
 
 import { fetchCredits } from 'Api/api';
 
+import {CastList, CastItem,ActorInfoWrap} from './cast.styled'
+
 const MovieCast = () => {
   const [movieCast, setMovieCast] = useState([]);
   const [error, setError] = useState(false);
@@ -17,20 +19,18 @@ const MovieCast = () => {
         setMovieCast(cast);
       } catch ({ response }) {
         setError(true);
-        console.log(response.data.message);
       }
     };
     fetchCast(movieId);
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {error && <NotFoundPage />}
-      <h2>Cast</h2>
       {movieCast.length ? (
-        <ul>
+        <CastList>
           {movieCast.slice(0, 12).map(actor => (
-            <li key={actor.cast_id}>
+            <CastItem key={actor.cast_id}>
               <img
                 src={
                   actor.profile_path
@@ -39,20 +39,20 @@ const MovieCast = () => {
                 }
                 alt={`${actor.name}`}
               />
-              <div>
+              <ActorInfoWrap>
                 <p>{actor.name}</p>
                 <p>
-                  Character: <br />
+                  Character:
                   <span>{actor.character}</span>
                 </p>
-              </div>
-            </li>
+              </ActorInfoWrap>
+            </CastItem>
           ))}
-        </ul>
+        </CastList>
       ) : (
         <p>No results</p>
       )}
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 import NotFoundPage from 'components/pages/NotFoundPage/NotFoundPage';
 
 import { fetchReviews } from 'Api/api';
+
+import {ReviewList, ReviewAutorName} from './MovieRewiewers.styled'
 
 const MovieRewiewers = () => {
   const [reviews, setReviews] = useState([]);
@@ -24,29 +28,33 @@ const MovieRewiewers = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <h2>Review</h2>
-
-      {error && <NotFoundPage />}
-
-      <div>
-        {reviews.length ? (
-          <ul>
-            {reviews.map(({ id, author, content }) => (
-              <li key={id}>
-                <div>
-                  <p>{author}</p>
-                  <p>{content}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No results</p>
-        )}
-      </div>
-    </div>
+    <>
+    {error && <NotFoundPage />}
+    {reviews.length ? (
+      <ReviewList>
+        {reviews.map(({ id, author, content }) => (
+          <li key={id}>
+            <div>
+              <ReviewAutorName>{author}</ReviewAutorName>
+              <p>{content}</p>
+            </div>
+          </li>
+        ))}
+      </ReviewList>
+    ) : (
+      <p>No results</p>
+    )}
+  </>
   );
 };
+
+MovieRewiewers.defaultProps = [];
+
+MovieRewiewers.propTypes = {
+  id: PropTypes.number,
+  autor: PropTypes.string,
+  content:PropTypes.string,
+}
+
 
 export default MovieRewiewers;

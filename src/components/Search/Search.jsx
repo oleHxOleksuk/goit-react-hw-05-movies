@@ -27,14 +27,12 @@ const Search = ({ onSubmit }) => {
   };
 
   const { query } = state;
-  
+
   return (
-    <search.Header>
+    <search.Container>
       <search.Form onSubmit={handleSubmit}>
         <search.SearchButton type="submit" aria-label="search-button">
-          <search.Label>
             <AiOutlineSearch />
-          </search.Label>
         </search.SearchButton>
         <search.Input
           name="search"
@@ -47,7 +45,7 @@ const Search = ({ onSubmit }) => {
           onChange={handleChange}
         />
       </search.Form>
-    </search.Header>
+    </search.Container>
   );
 };
 
