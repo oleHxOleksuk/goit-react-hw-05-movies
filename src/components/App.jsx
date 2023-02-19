@@ -12,8 +12,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 const MoviesInformation = lazy(() => import('./pages/MoviesInformation/MoviesInformations'));
 
 const Cast = lazy(() => import('./Cast/Cast'));
-const MovieRewiewers = lazy(() => import('./MovieRewiewers/MovieRewiewers'));
-
+const MovieRewiewers = lazy(() => import('../components/MovieReviewers/MovieReviewers'));
 
 
 
