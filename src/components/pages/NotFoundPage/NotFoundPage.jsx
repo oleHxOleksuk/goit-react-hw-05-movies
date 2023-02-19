@@ -1,6 +1,6 @@
-const NoteFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <h1>Not Found Page</h1>
   )
 }
-export default NoteFoundPage;
+export default NotFoundPage;

@@ -1,22 +1,40 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-import Navigation from "./Navigation/Navigation";
-import Home from "./pages/HomePage/Home";
-import Movies from "./pages/MoviesPage/Movies";
-import NoteFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import GlobalStyle from 'globalStyles';
+
+import SharedLayout from 'Shared/SharedLayout/SharedLayout'
+import Loader from "Shared/Loader/Loader";
+
+const Home = lazy(() => import('./pages/Home/Home'));
+const Movies = lazy(() => import('./pages/MoviesPage/Movies'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
+const MoviesInformation = lazy(() => import('./pages/MoviesInformation/MoviesInformations'));
+
+const Cast = lazy(() => import('./components/Cast/Cast'));
+const MovieRewiewers = lazy(() => import('./components/MovieRewiewers/MovieRewiewers'));
+
+
+
+
 
 export const App = () => {
   return (
-    <BrowserRouter>
-
-    <Navigation/>
-
-    <Routes>
-      <Route path="/" element = {<Home/>}/>
-      <Route path="/movies" element = {<Movies/>}/>
-      <Route path="*" element = {<NoteFoundPage/>}/>
+    <>
+    <GlobalStyle />
+    <Suspense fallback={<Loader/>}>
+      <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MoviesInformation />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<MovieRewiewers />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
     </Routes>
-
-    </BrowserRouter>
+</Suspense>
+</>
   );
 };
