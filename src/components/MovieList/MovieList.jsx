@@ -1,4 +1,4 @@
-import { StyleList, MovieLink } from './MovieList.styled'
+import { StyledList, MovieLink } from './MovieList.styled'
 
 import PropTypes from 'prop-types';
 
@@ -13,7 +13,7 @@ const MovieList = ({result}) => {
       </MovieLink>
     </li>
   ));
-  return <StyleList>{element}</StyleList>;
+  return <StyledList>{element}</StyledList>;
 };
 
 export default MovieList;
