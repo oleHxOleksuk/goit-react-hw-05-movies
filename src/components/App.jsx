@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-import GlobalStyle from 'styled-components';
+import GlobalStyle from "GlobalStyle";
 
 import SharedLayout from '../Shared/SharedLayout/SharedLayout'
 import Loader from "Shared/Loader/Loader";

@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchTrending } from 'Api/api';
 
 import { HomeMain } from './Home.styled';
-import { PaginationStyle } from 'Shared/PaginationStyle';
+import { PaginationStyle } from 'Shared/PaginationStyle.styled';
 
 import MovieList from 'components/MovieList/MovieList';
 import Loader from 'Shared/Loader/Loader';

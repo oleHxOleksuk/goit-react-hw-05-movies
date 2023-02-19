@@ -9,7 +9,7 @@ import Search from "components/Search/Search";
 import MovieList from "components/MovieList/MovieList";
 
 import Loader from "Shared/Loader/Loader";
-import { PaginationStyle } from "Shared/PaginationStyle";
+import { PaginationStyle } from "Shared/PaginationStyle.styled";
 
 
 

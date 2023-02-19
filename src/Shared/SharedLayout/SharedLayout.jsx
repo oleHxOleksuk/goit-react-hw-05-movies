@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import NavMenu from 'componets/NavMenu/NavMenu';
 
-import { Container, Header } from "./sharedLayout.styled";
+import {Container, Header} from './sharedLayout.styled'
 
 const SharedLayout = () => {
   return (
