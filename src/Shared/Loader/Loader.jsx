@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Puff } from 'react-loader-spinner';
+
 import { LoadWrapper } from './loader.styled';
 
 const Loader = () => {

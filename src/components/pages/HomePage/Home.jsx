@@ -31,7 +31,7 @@ const Home = () => {
         setLoading(false);
       }
     };
-    
+
     getTrending(currentPage);
   }, [currentPage]);
 
@@ -49,7 +49,7 @@ const Home = () => {
           breakLabel="..."
           nextLabel=">"
           onPageChange={handleClick}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={10}
           pageCount={totalPages}
           previousLabel="<"
           renderOnZeroPageCount={null}
@@ -61,4 +61,5 @@ const Home = () => {
     </HomeMain>
   );
 };
+
 export default Home;
