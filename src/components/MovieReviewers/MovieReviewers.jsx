@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import NotFoundPage from 'pages/NotFound/NotFoundPage';
+import NotFoundPage from 'components/pages/NotFoundPage/NotFoundPage';
 
-import { fetchReviews } from 'shared/services/fetch-api';
+import { fetchReviews } from 'Api/api';
 
 const MovieRewiewers = () => {
   const [reviews, setReviews] = useState([]);

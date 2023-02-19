@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 
 import GlobalStyle from "GlobalStyle";
 
-import SharedLayout from '../Shared/SharedLayout/SharedLayout'
+import SharedLayout from "Shared/SharedLayout/SharedLayout";
 import Loader from "Shared/Loader/Loader";
 
 const Home = lazy(() => import('./pages/HomePage/Home'));

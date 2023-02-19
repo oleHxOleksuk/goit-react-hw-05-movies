@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import NavMenu from 'componets/NavMenu/NavMenu';
+import NavMenu from "components/NavMenu/NavMenu";
 
 import {Container, Header} from './sharedLayout.styled'
 
